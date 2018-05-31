@@ -1,0 +1,20 @@
+{
+  "name": "hexo-theme-sheet",
+  "version": "1.0.0",
+  "description": ":page_with_curl: hexo themes, a piece of blog.(working)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jiasm/hexo-theme-sheet.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jiasm/hexo-theme-sheet/issues"
+  },
+  "homepage": "https://github.com/Jiasm/hexo-theme-sheet#readme"
+}
