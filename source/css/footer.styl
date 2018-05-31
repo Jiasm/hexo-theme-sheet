@@ -1,9 +1,10 @@
 .footer {
+  display: flex;
   height: 180px;
-  padding-top: 60px;
-  padding-left: paddingJustify;
+  padding: 60px paddingJustify 0;
   background: footerBackColor;
   font-size: textSize;
+
   a {
     color: linkColor;
     text-decoration: none;
@@ -20,5 +21,28 @@
   .footer-info {
     color: tipsColor;
     font-size: textSize;
+  }
+
+  .contact-info {
+    flex: 1;
+    display: flex;
+
+    justify-content: flex-end;
+
+    .contact-link {
+      font-size: 2em;
+      color: textColor;
+      transition: all .3s linear;
+      padding: 0 .5em;
+
+      &:hover {
+        color: linkColor;
+        text-decoration: none;
+      }
+
+      &:last-of-type {
+        padding-right: 0;
+      }
+    }
   }
 }
