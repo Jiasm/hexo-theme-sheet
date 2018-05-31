@@ -1,0 +1,12 @@
+<footer class="footer">
+  <% if (theme.sidebar === 'bottom'){ %>
+    <%- partial('_partial/sidebar') %>
+  <% } %>
+  <div class="outer">
+    <div class="footer-info" class="inner">
+      <p class="copyright">&copy; <%= date(new Date(), 'YYYY') %> <%= config.author || config.title %><br></p>
+      <%= __('powered by') %> <a href="http://hexo.io/" target="_blank">Hexo</a>
+      <%= __('theme by') %> <a href="https://github.com/Jiasm/hexo-theme-sheet" target="_blank">Sheet</a>
+    </div>
+  </div>
+</footer>

@@ -6,11 +6,12 @@
     width: 50%;
     display: flex;
     flex-direction: column;
-    padding: 50px 95px;
-  }
+    padding: 70px paddingJustify 40px;
+    transition: all .3s linear;
 
-  .post:first-child {
-    margin-top: 0;
+    &:hover {
+      background-color: #f2f2f2;
+    }
   }
 
   .post-title {
@@ -46,9 +47,11 @@
   }
 
   .post-meta {
-    font-size: 15px;
-    color: #666;
+    flex: 1;
     display: flex;
     justify-content: flex-end;
+    font-size: 15px;
+    color: #666;
+    align-items: flex-end;
   }
 }

@@ -1,0 +1,45 @@
+.paginator-wrap {
+  display: flex;
+  padding: 20px 95px;
+  font-size: 18px;
+  justify-content: flex-end;
+  align-items: center;
+
+  a {
+    text-decoration: none;
+  }
+
+  .page-number {
+    color: linkColor;
+    cursor: pointer;
+    padding: 0 .5em;
+
+    &.current, &.current:hover {
+      cursor: default;
+      color: tipsColor;
+    }
+  }
+
+  .paginator-item {
+    font-size: 1.4em;
+  }
+
+  .paginator-item,
+  .page-number {
+    color: textColor;
+    transition: all .3s linear;
+
+    &:hover {
+      color: linkColor;
+    }
+  }
+
+  .extend {
+    &.prev {
+      padding-right: 1em;
+    }
+    &.next {
+      padding-left: 1em;
+    }
+  }
+}

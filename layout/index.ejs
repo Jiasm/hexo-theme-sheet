@@ -14,22 +14,31 @@
       <article class="post">
         <div class="post-title">
           <a class="post-title-link" href="<%- url_for(post.path) %>">
-            <%// post.title %>
-              test Title
+            <%- post.title %>
           </a>
         </div>
         <div class="post-content">
-          <%// strip_html(post.excerpt) %>
-            test Content
+          <%- strip_html(post.excerpt) %>
         </div>
         <div class="post-meta">
           <span class="post-time">
-            <%- date(post.date, "YYYY-MM-DD") %>
+            <%- date(post.date, "YYYY-MM-DD HH:mm") %>
           </span>
         </div>
       </article>
       <% }) %>
   </section>
+
+  <% if (page.total > 1) { %>
+    <!-- Index nav -->
+    <nav class="paginator-wrap">
+      <%- paginator({
+        prev_text: __('<div class="paginator-item"><i class="fa fa-angle-left"></i></div>'),
+        next_text: __('<div class="paginator-item"><i class="fa fa-angle-right"></i></div>'),
+        space: ''
+      }) %>
+    </nav>
+    <% } %>
 </body>
 
 </html>

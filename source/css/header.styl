@@ -1,12 +1,13 @@
 .header {
-  padding: 55px 2em 0;
+  padding: 55px 2em 20px;
+  margin-bottom: 25px;
   display: flex
   align-items: baseline
   justify-content: space-between
-
+  position: relative;
 
   .blog-title .logo {
-    color: #333333;
+    color: linkColor;
     font-size: 24px;
     font-family: "PingFang-SC", sans-serif;
     text-decoration: none;
@@ -24,12 +25,23 @@
     }
 
     .menu-item-link {
-      color: #999999;
+      color: tipsColor;
       text-decoration: none;
+      transition: all .3s linear;
 
       &:hover, &.active {
-        color: #333333;
+        color: linkColor;
       }
     }
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 2em;
+    height: 2px;
+    width: 50px;
+    background-color: #dfdfdf;
   }
 }
