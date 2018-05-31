@@ -1,7 +1,4 @@
 <footer class="footer">
-  <% if (theme.sidebar === 'bottom'){ %>
-    <%- partial('_partial/sidebar') %>
-  <% } %>
   <div class="outer">
     <div class="footer-info" class="inner">
       <p class="copyright">&copy; <%= date(new Date(), 'YYYY') %> <%= config.author || config.title %><br></p>
@@ -10,3 +7,7 @@
     </div>
   </div>
 </footer>
+<% if(config.disqus_shortname) { %>
+  <!-- 使用 DISQUS js 代码 -->
+  <script id="dsq-count-scr" src="//<%= config.disqus_shortname %>.disqus.com/count.js" async="async"></script>
+<% } %>
