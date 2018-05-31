@@ -1,5 +1,5 @@
 .header {
-  padding: 55px 2em 20px;
+  padding: 55px paddingJustify 20px;
   margin-bottom: 25px;
   display: flex
   align-items: baseline
@@ -22,6 +22,10 @@
       display: inline-block;
       margin-right: 10px;
       padding: 0 1em;
+
+      &:last-of-type {
+        padding-right: 0;
+      }
     }
 
     .menu-item-link {
@@ -39,7 +43,7 @@
     content: '';
     position: absolute;
     bottom: 0;
-    left: 2em;
+    left: paddingJustify;
     height: 2px;
     width: 50px;
     background-color: #dfdfdf;
