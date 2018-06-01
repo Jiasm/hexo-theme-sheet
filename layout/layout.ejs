@@ -8,6 +8,17 @@
         <%- body %>
       </main>
       <%- partial('_partial/footer') %>
+        <script>
+        function footerHandler () {
+          if (window.screen.availHeight > document.body.clientHeight) {
+            document.body.classList.add('fixed')
+          } else {
+            document.body.classList.remove('fixed')
+          }
+        }
+        window.addEventListener('load', footerHandler)
+        window.addEventListener('resize', footerHandler)
+      </script>
   </body>
 
 </html>

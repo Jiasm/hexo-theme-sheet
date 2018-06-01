@@ -1,9 +1,14 @@
 .paginator-wrap {
   display: flex;
-  padding: 20px 95px;
+  padding: 20px paddingJustify;
   font-size: 18px;
   justify-content: flex-end;
   align-items: center;
+
+  @media (max-width: 768px) {
+    padding-left: paddingJustifyMiddle;
+    padding-right: paddingJustifyMiddle;
+  }
 
   a {
     text-decoration: none;

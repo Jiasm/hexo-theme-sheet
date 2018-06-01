@@ -10,7 +10,13 @@
     transition: all .3s linear;
 
     &:hover {
-      background-color: #f2f2f2;
+      background-color: footerBackColor;
+    }
+
+    @media (max-width: 768px) {
+      width: 100%;
+      padding-left: paddingJustifyMiddle;
+      padding-right: paddingJustifyMiddle;
     }
   }
 

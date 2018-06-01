@@ -1,0 +1,14 @@
+<ul class="friends-wrap">
+  <% if (site.data.links) { %>
+    <% for (var i in site.data.links) { %>
+      <li class="friends-item">
+        <a href="<%= site.data.links[i].link %>" title="<%= i %>" target="_blank">
+          <span class="avatar-wrap">
+            <img src="<%= site.data.links[i].avatar %>" alt="<%= i %>"/>
+          </span>
+          <span class="friends-title"><%= i %></span><br/>
+        </a>
+      </li>
+    <% } %>
+  <% } %>
+</ul>

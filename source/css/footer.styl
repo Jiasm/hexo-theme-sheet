@@ -5,6 +5,11 @@
   background: footerBackColor;
   font-size: textSize;
 
+  @media (max-width: 768px) {
+    padding-left: paddingJustifyMiddle;
+    padding-right: paddingJustifyMiddle;
+  }
+
   a {
     color: linkColor;
     text-decoration: none;
@@ -44,5 +49,13 @@
         padding-right: 0;
       }
     }
+  }
+}
+
+.fixed {
+  .footer {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
   }
 }

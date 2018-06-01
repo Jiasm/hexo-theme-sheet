@@ -7,7 +7,12 @@
 }
 
 body {
+  position: relative;
   background-color: backColor;
+
+  &.fixed {
+    margin-bottom: 180px;
+  }
 }
 
 .container {
@@ -20,5 +25,6 @@ body {
 @import "paginator";
 @import "page";
 @import "comments";
+@import "links";
 @import "footer";
 @import "font-awesome";
