@@ -1,7 +1,7 @@
 .toc-wrap {
   position: fixed;
-  z-index: 2;
-  background-color: #f2f2f2;
+  z-index: 4;
+  background-color: #eee;
   padding: .5em;
   right: 0;
   top: 50%;
@@ -24,6 +24,14 @@
   li {
     list-style-type: none;
   }
+
+  @media (max-width: 768px) {
+    font-size: 22px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 24px;
+  }
 }
 
 .toc-toggle {
@@ -34,7 +42,7 @@
   padding: 0 .5em;
   text-align: center;
   font-size: 24px;
-  z-index: 2;
+  z-index: 4;
 
   label {
     cursor: pointer;
@@ -66,12 +74,25 @@
 
     ~ .toc-toggle {
       transform: translate(-300px, -50%);
+      color: #ccc;
       .fa-eye {
         display: none;
       }
       .fa-eye-slash {
         display: inline-block;
       }
+    }
+
+    ~ .mask {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+
+      z-index: 2;
+
+      background-color: rgba(0, 0, 0, .6);
     }
   }
 }
