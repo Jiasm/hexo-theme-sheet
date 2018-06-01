@@ -1,26 +1,28 @@
 <footer class="footer">
-  <div class="footer-info" class="inner">
-    <p class="copyright">&copy; <%= date(new Date(), 'YYYY') %> <%= config.author || config.title %><br></p>
-    <%= __('powered by') %> <a href="http://hexo.io/" target="_blank">Hexo</a>
-    <%= __('theme by') %> <a href="https://github.com/Jiasm/hexo-theme-sheet" target="_blank">Sheet</a>
+  <div class="footer-content">
+    <div class="footer-info" class="inner">
+      <p class="copyright">&copy; <%= date(new Date(), 'YYYY') %> <%= config.author || config.title %><br></p>
+      <%= __('powered by') %> <a href="http://hexo.io/" target="_blank">Hexo</a>
+      <%= __('theme by') %> <a href="https://github.com/Jiasm/hexo-theme-sheet" target="_blank">Sheet</a>
+    </div>
+    <ul class="contact-info">
+      <% if(config.contact.github) { %>
+        <a class="contact-link" href="<%= config.contact.github %>" target="_blank"><i class="fa fa-github"></i></a>
+      <% } %>
+      <% if(config.contact.weibo) { %>
+        <a class="contact-link" href="<%= config.contact.weibo %>" target="_blank"><i class="fa fa-weibo"></i></a>
+      <% } %>
+      <% if(config.contact.twitter) { %>
+        <a class="contact-link" href="<%= config.contact.twitter %>" target="_blank"><i class="fa fa-twitter"></i></a>
+      <% } %>
+      <% if(config.contact.facebook) { %>
+        <a class="contact-link" href="<%= config.contact.facebook %>" target="_blank"><i class="fa fa-facebook"></i></a>
+      <% } %>
+      <% if(config.contact.email) { %>
+        <a class="contact-link" href="<%= config.contact.email %>" target="_blank"><i class="fa fa-envelope"></i></a>
+      <% } %>
+    </ul>
   </div>
-  <ul class="contact-info">
-    <% if(config.contact.github) { %>
-      <a class="contact-link" href="<%= config.contact.github %>" target="_blank"><i class="fa fa-github"></i></a>
-    <% } %>
-    <% if(config.contact.weibo) { %>
-      <a class="contact-link" href="<%= config.contact.weibo %>" target="_blank"><i class="fa fa-weibo"></i></a>
-    <% } %>
-    <% if(config.contact.twitter) { %>
-      <a class="contact-link" href="<%= config.contact.twitter %>" target="_blank"><i class="fa fa-twitter"></i></a>
-    <% } %>
-    <% if(config.contact.facebook) { %>
-      <a class="contact-link" href="<%= config.contact.facebook %>" target="_blank"><i class="fa fa-facebook"></i></a>
-    <% } %>
-    <% if(config.contact.email) { %>
-      <a class="contact-link" href="<%= config.contact.email %>" target="_blank"><i class="fa fa-envelope"></i></a>
-    <% } %>
-  </ul>
 </footer>
 <% if(config.disqus_shortname) { %>
   <!-- 使用 DISQUS js 代码 -->
