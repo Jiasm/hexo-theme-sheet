@@ -6,11 +6,6 @@
   justify-content: space-between
   position: relative;
 
-  @media (max-width: 768px) {
-    padding-left: paddingJustifyMiddle;
-    padding-right: paddingJustifyMiddle;
-  }
-
   .blog-title .logo {
     color: linkColor;
     font-size: 24px;
@@ -52,5 +47,55 @@
     height: 2px;
     width: 50px;
     background-color: #dfdfdf;
+  }
+
+  @media (max-width: 768px) {
+    padding-left: paddingJustifyMiddle;
+    padding-right: paddingJustifyMiddle;
+
+    &::after {
+      left: paddingJustifyMiddle;
+    }
+  }
+
+  @media (max-width: 600px) {
+    flex-wrap: wrap;
+
+    .blog-title {
+      width: 100%;
+    }
+
+    .navbar {
+      flex: 1;
+      margin-top: 1em;
+
+      .menu {
+        .menu-item {
+          padding-left: 0;
+        }
+      }
+    }
+
+    &::after {
+      left: paddingJustifyMiddle;
+      right: paddingJustifyMiddle;
+      width: auto!important;
+    }
+  }
+
+  @media (max-width: 600px) {
+    padding-top: 40px;
+  }
+
+  @media (max-width: 480px) {
+    padding-top: 20px;
+    padding-left: paddingJustifyMobile;
+    padding-right: paddingJustifyMobile;
+
+    &::after {
+      left: paddingJustifyMobile;
+      right: paddingJustifyMobile;
+      width: auto!important;
+    }
   }
 }

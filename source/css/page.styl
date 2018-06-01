@@ -3,11 +3,6 @@
   color: textColor;
   line-height: 1.8;
 
-  @media (max-width: 768px) {
-    padding-left: paddingJustifyMiddle;
-    padding-right: paddingJustifyMiddle;
-  }
-
   #more {
     display: none;
   }
@@ -403,5 +398,29 @@
 
     border: none;
     background-color: transparent;
+  }
+
+  @media (max-width: 768px) {
+    padding-left: paddingJustifyMiddle;
+    padding-right: paddingJustifyMiddle;
+
+    &,
+    p {
+      overflow: hidden;
+
+      font-size: 16px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    padding-left: paddingJustifyMobile;
+    padding-right: paddingJustifyMobile;
+
+    &,
+    p {
+      overflow: hidden;
+
+      font-size: 17px;
+    }
   }
 }
