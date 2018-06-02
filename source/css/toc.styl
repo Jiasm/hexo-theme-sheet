@@ -1,27 +1,30 @@
 .toc-wrap {
-  position: fixed;
+  position: absolute;
   z-index: 4;
-  padding: .5em;
-  right: 0;
-  top: 50%;
-  transform: translate(100%, -50%);
-  max-height: 50vh;
+  right: 40px;
+  top: 0;
   overflow-y: scroll;
-  width: 300px;
+  width: 0;
+  height: 0;
+  transition: width .1s linear, height .1s linear;
+  background-color: #fff;
+  border-radius: 5px;
 
   a {
-    color: #eee;
+    color: #666;
     text-decoration: none;
     font-size: 16px;
     line-height: 1.6;
+    transition: color .3s linear;
 
-    &:hover {
-      color: #fff;
+    &:hover, &.selected {
+      color: #2196f3;
     }
   }
 
   li {
     list-style-type: none;
+    text-align: left;
   }
 
   @media (max-width: 768px) {
@@ -31,35 +34,54 @@
   @media (max-width: 480px) {
     font-size: 24px;
   }
+
+  @media (min-width: 1920px) {
+    border: 1px solid #ddd;
+    padding: .5em;
+    height: auto;
+    max-height: 80vh;
+    width: 300px;
+  }
 }
 
 .toc-toggle {
   position: fixed;
-  right: 0;
-  top: 50%;
+  right: 20px;
+  top: 252px;
   transform: translate(0, -50%);
   padding: 0 .5em;
   text-align: center;
   font-size: 24px;
   z-index: 4;
+  color: #ddd;
+  transition: color .3s linear;
+
+  &:hover {
+    color: #000;
+  }
 
   label {
     cursor: pointer;
   }
 
-  .fa-eye {
-    display: inline-block;
-  }
-  .fa-eye-slash {
-    display: none;
-  }
-
   @media (max-width: 768px) {
     font-size: 26px;
+    right: 10px;
+    top: 259px;
   }
 
   @media (max-width: 480px) {
     font-size: 28px;
+    right: 0;
+    top: 152px;
+  }
+
+  @media (min-width: 1920px) {
+    transform: translate(40px, -50%);
+
+    label {
+      visibility: hidden;
+    }
   }
 }
 
@@ -67,36 +89,14 @@
   display: none;
 
   &:checked {
-    ~ .toc-wrap {
-      transform: translate(0, -50%);
-    }
-
     ~ .toc-toggle {
-      transform: translate(-300px, -50%);
-      color: #eeeeee;
-      .fa-eye {
-        display: none;
+      color: #000;
+      .toc-wrap {
+        border: 1px solid #ddd;
+        padding: .5em;
+        height: 15em;
+        width: 300px;
       }
-      .fa-eye-slash {
-        display: inline-block;
-      }
-    }
-
-    ~ .mask {
-      display: block;
-      backdrop-filter: blur(15px)
-      background-color: rgba(0, 0, 0, .6);
     }
   }
-}
-
-.mask {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 2;
-  transition: all .3s linear;
 }

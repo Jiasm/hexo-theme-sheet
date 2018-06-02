@@ -11,11 +11,9 @@
 <body>
   <section class="posts">
     <% page.posts.each(function (post) { %>
-      <article class="post">
+      <a class="post" href="<%- url_for(post.path) %>">
         <div class="post-title">
-          <a class="post-title-link" href="<%- url_for(post.path) %>">
-            <%- post.title %>
-          </a>
+          <%- post.title %>
         </div>
         <div class="post-content">
           <%- strip_html(post.excerpt) %>
@@ -26,7 +24,7 @@
             <%- date(post.date, "YYYY-MM-DD HH:mm") %>
           </span>
         </div>
-      </article>
+      </a>
       <% }) %>
   </section>
 

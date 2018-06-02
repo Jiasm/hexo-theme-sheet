@@ -13,13 +13,14 @@
 
       <script>
       function footerHandler () {
+        if (!window.screen || !document.body) return
         if (window.screen.availHeight > document.body.clientHeight) {
           document.body.classList.add('fixed')
         } else {
           document.body.classList.remove('fixed')
         }
       }
-      window.addEventListener('load', footerHandler)
+      footerHandler()
       window.addEventListener('resize', footerHandler)
     </script>
   </body>

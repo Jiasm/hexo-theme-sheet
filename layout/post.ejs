@@ -1,15 +1,13 @@
 <% if (toc(page.content).length > 1) { %>
   <input type="checkbox" id="toggle-toc" />
-  <div class="toc-wrap">
-    <%- toc(page.content) %>
-  </div>
   <div class="toc-toggle">
     <label for="toggle-toc">
-      <i class="fa fa-eye"></i>
-      <i class="fa fa-eye-slash"></i>
+      <i class="fa fa-list-ol"></i>
     </label>
+    <div class="toc-wrap">
+      <%- toc(page.content) %>
+    </div>
   </div>
-  <label class="mask" for="toggle-toc"></label>
 <% } %>
 <div id="post-content">
   <h1><%- page.title %></h1>
@@ -36,8 +34,59 @@
 </script>
 <% } %>
 <script>
+  // I'm not sure your browser supports `es6`
   window.addEventListener('load', function () {
     [].concat(Array.from(document.querySelectorAll('code')), Array.from(document.querySelectorAll('pre'))).filter(function (item) {return item.className.indexOf('language') >= 0}).forEach(function (tag) { tag.classList.add('line-numbers') })
     Prism.highlightAll()
+
+    let scrollY = window.scrollY
+    let headersList = Array.from(document.querySelector('#post-content').querySelectorAll('h1,h2,h3,h4,h5,h6')).map(function (item) {
+      let rect = item.getBoundingClientRect()
+      let anchorTag = document.querySelector(`a.toc-link[href="#${item.id}"]`)
+
+      if (!anchorTag) return
+      return {
+        top: scrollY + rect.top - rect.height,
+        tag: item,
+        anchorTag: anchorTag
+      }
+    }).filter(function (item) { return item })
+
+    window.addEventListener('scroll', debounce(scrollHandler, 200))
+    scrollHandler()
+
+    function scrollHandler () {
+      let scrollY = window.scrollY
+      let minInfo = null
+
+      for (let item of headersList) {
+        if (!minInfo) {
+          minInfo = item
+          continue
+        }
+
+        if ((scrollY - item.top) >= 0 && (scrollY - minInfo.top) > (scrollY - item.top)) {
+          minInfo = item
+        }
+      }
+
+      if (minInfo) {
+        headersList.forEach(function (item) {
+          item.anchorTag && item.anchorTag.classList.remove('selected')
+        })
+        minInfo.anchorTag.classList.add('selected')
+      }
+    }
+
+    function debounce (func, delay) {
+      let debounceIdentify = 0
+      return function () {
+        debounceIdentify && clearTimeout(debounceIdentify)
+        debounceIdentify = setTimeout(function () {
+          debounceIdentify = 0
+          func.apply(this, arguments)
+        }, delay)
+      }
+    }
   })
 </script>
