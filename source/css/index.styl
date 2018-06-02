@@ -72,3 +72,28 @@
     align-items: flex-end;
   }
 }
+
+.goto-top {
+  position: fixed;
+  right: 20px;
+  bottom: (180px + 20px);
+  padding: 0 0.5em;
+  text-align: center;
+  font-size: 24px;
+  z-index: 4;
+  color: #ddd;
+  transition: color 0.3s linear;
+
+  &:hover {
+    color: #000;
+  }
+
+  @media (max-width: 768px) {
+    bottom: (150px + 80px);
+  }
+
+  @media (min-width: 1920px) {
+    right: 50%;
+    transform: translate(760px);
+  }
+}

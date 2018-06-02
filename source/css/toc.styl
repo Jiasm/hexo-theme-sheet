@@ -33,6 +33,7 @@
 
   @media (max-width: 480px) {
     font-size: 24px;
+    right: 50px;
   }
 
   @media (min-width: 1920px) {
@@ -85,6 +86,16 @@
   }
 }
 
+.mask {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+}
+
 #toggle-toc {
   display: none;
 
@@ -97,6 +108,10 @@
         height: 15em;
         width: 300px;
       }
+    }
+
+    ~ .mask {
+      display: block;
     }
   }
 }

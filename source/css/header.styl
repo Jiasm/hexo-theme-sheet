@@ -6,14 +6,17 @@
   justify-content: space-between
   position: relative;
 
-  .blog-title .logo {
-    color: linkColor;
-    font-size: 24px;
-    font-family: "PingFang-SC", sans-serif;
-    text-decoration: none;
+  .blog-title {
+    .logo {
+      color: linkColor;
+      font-size: 24px;
+      font-family: "PingFang-SC", sans-serif;
+      text-decoration: none;
+    }
   }
 
   .menu {
+    display: flex;
     margin: 0;
     padding: 0;
 
@@ -96,6 +99,18 @@
       left: paddingJustifyMobile;
       right: paddingJustifyMobile;
       width: auto!important;
+    }
+
+    .blog-title {
+      text-align: center;
+    }
+
+    .menu {
+      justify-content: center;
+    }
+
+    .menu-item {
+      margin-right: 0;
     }
   }
 }
