@@ -6,7 +6,7 @@
     <ul class="menu">
       <% for ([name, menuItem] of Object.entries(theme.menu)) { %>
         <li class="menu-item">
-          <a href="<%- url_for(menuItem) %>" class="menu-item-link"><%= name %></a>
+          <a href="<%- url_for(menuItem) %>" class="menu-item-link menu-item-<%- name.toLowerCase() %>"><%= name %></a>
         </li>
       <% } %>
     </ul>

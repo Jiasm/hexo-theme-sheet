@@ -17,7 +17,8 @@
       <script>
       function footerHandler () {
         if (!window.screen || !document.body) return
-        if (window.screen.availHeight > document.body.clientHeight) {
+        var hasComments = document.querySelector('.comments')
+        if ((window.screen.availHeight - (hasComments ? 350 : 0)) > document.body.clientHeight) {
           document.body.classList.add('fixed')
         } else {
           document.body.classList.remove('fixed')
@@ -27,5 +28,22 @@
       window.addEventListener('resize', footerHandler)
     </script>
   </body>
+  <script>
+    var pathname = new URL(location.href).pathname.replace(/\/$/, '')
+
+    switch (pathname) {
+      case '/about':
+        document.querySelector('.menu-item-about').classList.add('active')
+        break
+      case '/contact':
+        document.querySelector('.menu-item-contact').classList.add('active')
+        break
+      case '/links':
+        document.querySelector('.menu-item-friends').classList.add('active')
+        break
+      default:
+        document.querySelector('.menu-item-home').classList.add('active')
+    }
+  </script>
 
 </html>
