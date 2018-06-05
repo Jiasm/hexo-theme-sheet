@@ -389,6 +389,22 @@
     background-color: transparent;
   }
 
+  .gist-file {
+    table {
+      margin: 0;
+
+      td {
+        border: none;
+      }
+
+      tr {
+        &:nth-child(2n) {
+          background-color: #fff;
+        }
+      }
+    }
+  }
+
   @media (max-width: 768px) {
     padding-left: paddingJustifyMiddle;
     padding-right: paddingJustifyMiddle;
