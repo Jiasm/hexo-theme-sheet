@@ -3,6 +3,8 @@
 
 一个简单的hexo主题，刚刚做完。
 
+[Live Demo](https://blog.jiasm.org/)
+
 ### TODO
 
 - [ ] 细化拆分配置（暂时没有用到theme相关的，全是global config）
