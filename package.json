@@ -1,6 +1,6 @@
 {
   "name": "hexo-theme-sheet",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": ":page_with_curl: hexo themes, a piece of blog.(working)",
   "main": "index.js",
   "scripts": {
