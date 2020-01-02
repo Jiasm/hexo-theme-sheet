@@ -1,6 +1,15 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
-  <title><%= config.title %></title>
+  
+  <%
+    var title = []
+    if (page.current > 1) title.push(__('page', page.current))
+    if (page.title) title.push(page.title)
+    if (page.category) title.push(page.category)
+    if (page.tag) title.push(page.tag)
+    title.push(config.title)
+  %>
+  <title><%= title.join(' - ') %></title>
   <%- css('css/style.css') %>
 </head>
