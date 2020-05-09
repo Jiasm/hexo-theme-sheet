@@ -1,7 +1,6 @@
 .toc-wrap {
   position: absolute;
   z-index: 4;
-  right: 40px;
   top: 0;
   overflow-y: scroll;
   width: 0;
@@ -9,6 +8,13 @@
   transition: width .1s linear, height .1s linear;
   background-color: #fff;
   border-radius: 5px;
+
+  &.toc-wrap-right {
+    right: 40px;
+  }
+  &.toc-wrap-left {
+    left: 40px;
+  }
 
   a {
     color: #666;
@@ -47,7 +53,6 @@
 
 .toc-toggle {
   position: fixed;
-  right: 20px;
   top: 252px;
   transform: translate(0, -50%);
   padding: 0 .5em;
@@ -56,6 +61,13 @@
   z-index: 4;
   color: #ddd;
   transition: color .3s linear;
+
+  &.toc-toggle-left {
+    left: 20px;
+  }
+  &.toc-toggle-right {
+    right: 20px;
+  }
 
   &:hover {
     color: #000;
@@ -98,6 +110,15 @@
 
 #toggle-toc {
   display: none;
+  &.toggle-toc-right {
+    right: 40px;
+  }
+  &.toggle-toc-left {
+    left: 40px;
+  }
+  &.toggle-toc-right {
+    right: 40px;
+  }
 
   &:checked {
     ~ .toc-toggle {

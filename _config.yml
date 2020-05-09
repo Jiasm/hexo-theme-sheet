@@ -5,7 +5,7 @@ menu:
   About     : /about          # 关于
   Friends   : /links           # 友链
 
-  post_menu_side: right  # 默认 right
+  post_menu_side: left  # 默认 right
 
 
 favicon:
