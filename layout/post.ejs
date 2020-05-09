@@ -1,10 +1,10 @@
 <% if (toc(page.content).length > 1) { %>
-  <input type="checkbox" id="toggle-toc" />
-  <div class="toc-toggle">
+  <input type="checkbox" id="toggle-toc" class="toggle-toc-<%- theme.post_menu_side %>" />
+  <div class="toc-toggle toc-toggle-<%- theme.post_menu_side %>">
     <label for="toggle-toc">
       <i class="fa fa-list-ol"></i>
     </label>
-    <div class="toc-wrap">
+    <div class="toc-wrap toc-wrap-<%- theme.post_menu_side %>">
       <%- toc(page.content) %>
     </div>
   </div>
