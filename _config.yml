@@ -1,0 +1,15 @@
+# header - menu
+menu:
+  Home      : /                # 主页
+  # Document: /document/       # 文档
+  About     : /about          # 关于
+  Friends   : /links           # 友链
+
+  post_menu_side: right  # 默认 right
+
+
+favicon:
+  small: /images/favicon-z-16x16.ico
+  medium: /images/favicon-z-32x32.ico
+  apple_touch_icon: /images/favicon-z-32x32.ico
+  safari_pinned_tab: /images/favicon-z-32x32.ico
