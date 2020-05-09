@@ -1,3 +1,11 @@
+# header - menu
+menu:
+  Home: /
+  About: /about
+  Contact: /contact
+  Friends: /links
+  Github: https://github.com/jiasm
+
 post_menu_side: right  # 默认 right
 
 favicon:
