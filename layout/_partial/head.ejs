@@ -1,7 +1,15 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
-  
+  <% if (theme.favicon.small) { %>
+  <link rel="icon" type="image/png" sizes="16x16" href="<%- url_for(theme.favicon.small) %> " />
+  <% } %>
+  <% if(theme.favicon.medium) { %>
+  <link rel="icon" type="image/png" sizes="32x32" href="<%- url_for(theme.favicon.small) %> " />
+  <% } %>
+  <% if (theme.favicon.apple_touch_icon) { %>
+  <link rel="apple-touch-icon" sizes="180x180" href="<%- url_for(theme.favicon.apple_touch_icon) %>">
+  <% } %>
   <%
     var title = []
     if (page.current > 1) title.push(__('page', page.current))

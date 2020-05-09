@@ -1,1 +1,7 @@
 post_menu_side: right  # 默认 right
+
+favicon:
+  small: null
+  medium: null
+  apple_touch_icon: null
+  safari_pinned_tab: null
